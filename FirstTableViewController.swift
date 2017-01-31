@@ -50,8 +50,9 @@ class FirstTableViewController: UITableViewController {
         // Configure the cell...
         cell.nameLabel.text = areas[indexPath.row]
         cell.thumimage.image = UIImage(named: tupian[indexPath.row])
-        cell.thumimage.layer.cornerRadius = cell.thumimage.frame.size.height/2
-        cell.thumimage.clipsToBounds = true
+        //cell.thumimage.layer.cornerRadius = cell.thumimage.frame.size.height/2
+        //cell.thumimage.clipsToBounds = true
+        
         cell.addressLabel.text = didian[indexPath.row]
         cell.typeLabel.text = leixing[indexPath.row]
         return cell
