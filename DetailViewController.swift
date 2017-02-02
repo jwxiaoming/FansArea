@@ -10,13 +10,19 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    var areaname = ""
+    var area: area!
     
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var dizhi: UILabel!
+    @IBOutlet weak var leix: UILabel!
     @IBOutlet weak var imageview: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageview.image = UIImage(named: areaname)
+        imageview.image = UIImage(named: area.tupian)
+        name.text = area.areas
+        dizhi.text = area.didian
+        leix.text = area.leixing
 
         // Do any additional setup after loading the view.
     }

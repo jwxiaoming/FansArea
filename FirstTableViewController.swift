@@ -10,14 +10,32 @@ import UIKit
 
 class FirstTableViewController: UITableViewController {
     
-    var areas = ["咖啡胡同", "霍米", "茶.家", "洛伊斯咖啡", "贝蒂生蚝", "福奇餐馆", "阿波画室", "伯克街面包坊", "黑氏巧克力", "惠灵顿雪梨", "北州", "布鲁克林塔菲", "格雷厄姆大街肉", "华夫饼 & 沃夫", "五叶", "眼光咖啡", "忏悔", "巴拉菲娜", "多尼西亚", "皇家橡树", "泰咖啡"]
+    var areas = [
+        area(areas: "咖啡胡同", tupian: "cafedeadend.jpg", didian: "香港", leixing: "咖啡 & 茶店", isVisited: false),
+        area(areas: "霍米", tupian: "homei.jpg", didian: "香港", leixing: "咖啡", isVisited: false),
+        area(areas: "茶.家", tupian: "teakha.jpg", didian: "香港", leixing: "茶屋", isVisited: false),
+        area(areas: "洛伊斯咖啡", tupian: "cafeloisl.jpg", didian: "香港", leixing: "奥地利式 & 休闲饮料", isVisited: false),
+        area(areas: "贝蒂生蚝", tupian: "petiteoyster.jpg", didian: "香港", leixing: "法式", isVisited: false),
+        area(areas: "福奇餐馆", tupian: "forkeerestaurant.jpg", didian: "香港", leixing: "面包房", isVisited: false),
+        area(areas: "阿波画室", tupian: "posatelier.jpg", didian: "香港", leixing: "面包房", isVisited: false),
+        area(areas: "伯克街面包坊", tupian: "bourkestreetbakery.jpg", didian: "悉尼", leixing: "巧克力", isVisited: false),
+        area(areas: "黑氏巧克力", tupian: "haighschocolate.jpg", didian: "悉尼", leixing: "咖啡", isVisited: false),
+        area(areas: "惠灵顿雪梨", tupian: "palominoespresso.jpg", didian: "悉尼", leixing: "美式 & 海鲜", isVisited: false),
+        area(areas: "北州", tupian: "upstate.jpg", didian: "纽约", leixing: "美式", isVisited: false),
+        area(areas: "布鲁克林塔菲", tupian: "traif.jpg", didian: "纽约", leixing: "美式", isVisited: false),
+        area(areas: "格雷厄姆大街肉", tupian: "grahamavenuemeats.jpg", didian: "纽约", leixing: "早餐 & 早午餐", isVisited: false),
+        area(areas: "华夫饼 & 沃夫", tupian: "wafflewolf.jpg", didian: "纽约", leixing: "法式 & 茶", isVisited: false),
+        area(areas: "五叶", tupian: "fiveleaves.jpg", didian: "纽约", leixing: "咖啡 & 茶", isVisited: false),
+        area(areas: "眼光咖啡", tupian: "cafelore.jpg", didian: "纽约", leixing: "拉丁美式", isVisited: false),
+        area(areas: "忏悔", tupian: "confessional.jpg", didian: "纽约", leixing: "西班牙式", isVisited: false),
+        area(areas: "巴拉菲娜", tupian: "barrafina.jpg", didian: "伦敦", leixing: "西班牙式", isVisited: false),
+        area(areas: "多尼西亚", tupian: "donostia.jpg", didian: "伦敦", leixing: "西班牙式", isVisited: false),
+        area(areas: "皇家橡树", tupian: "royaloak.jpg", didian: "伦敦", leixing: "英式", isVisited: false),
+        area(areas: "泰咖啡", tupian: "thaicafe.jpg", didian: "伦敦", leixing: "泰式", isVisited: false)
+    ]
     
-    var tupian =
-        ["cafedeadend.jpg", "homei.jpg", "teakha.jpg", "cafeloisl.jpg", "petiteoyster.jpg", "forkeerestaurant.jpg", "posatelier.jpg", "bourkestreetbakery.jpg", "haighschocolate.jpg", "palominoespresso.jpg", "upstate.jpg", "traif.jpg", "grahamavenuemeats.jpg", "wafflewolf.jpg", "fiveleaves.jpg", "cafelore.jpg", "confessional.jpg", "barrafina.jpg", "donostia.jpg", "royaloak.jpg", "thaicafe.jpg"]
-
-    var didian = ["香港", "香港", "香港", "香港", "香港", "香港", "香港", "悉尼", "悉尼", "悉尼", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "伦敦", "伦敦", "伦敦", "伦敦"]
     
-    var leixing = ["咖啡 & 茶店","咖啡", "茶屋", "奥地利式 & 休闲饮料","法式", "面包房", "面包房", "巧克力", "咖啡", "美式 & 海鲜", "美式", "美式","早餐 & 早午餐", "法式 & 茶", "咖啡 & 茶", "拉丁美式", "西班牙式", "西班牙式", "西班牙式", "英式", "泰式"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +66,13 @@ class FirstTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)as! CustomTableViewCell
 
         // Configure the cell...
-        cell.nameLabel.text = areas[indexPath.row]
-        cell.thumimage.image = UIImage(named: tupian[indexPath.row])
+        cell.nameLabel.text = areas[indexPath.row].areas
+        cell.thumimage.image = UIImage(named: areas[indexPath.row].tupian)
         //cell.thumimage.layer.cornerRadius = cell.thumimage.frame.size.height/2
         //cell.thumimage.clipsToBounds = true
         
-        cell.addressLabel.text = didian[indexPath.row]
-        cell.typeLabel.text = leixing[indexPath.row]
+        cell.addressLabel.text = areas[indexPath.row].didian
+        cell.typeLabel.text = areas[indexPath.row].leixing
         return cell
     }
     
@@ -103,7 +121,7 @@ class FirstTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "showDetail"{
             let dest = segue.destination as! DetailViewController
-            dest.areaname = tupian[tableView.indexPathForSelectedRow!.row]
+            dest.area = areas[tableView.indexPathForSelectedRow!.row]
         }
     }
     
