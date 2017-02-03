@@ -1,5 +1,5 @@
 //
-//  CustomTableViewCell.swift
+//  DetailTableViewCell.swift
 //  FansArea
 //
 //  Created by 狗儿心 on 17/2/3.
@@ -8,12 +8,10 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class DetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var thumimage: UIImageView!
+    @IBOutlet weak var FildeLabel: UILabel!
+    @IBOutlet weak var ValueLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

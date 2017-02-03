@@ -45,6 +45,9 @@ class FirstTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tableView.backgroundColor = UIColor.brown
+        //隐藏返回按钮的名字，只留一个箭头
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style: .plain, target:nil, action:nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,8 +123,8 @@ class FirstTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "showDetail"{
-            let dest = segue.destination as! DetailViewController
-            dest.area = areas[tableView.indexPathForSelectedRow!.row]
+            let dest = segue.destination as! DetailTableViewController
+            dest.areas = areas[tableView.indexPathForSelectedRow!.row]
         }
     }
     
