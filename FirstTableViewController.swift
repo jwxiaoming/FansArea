@@ -11,7 +11,7 @@ import UIKit
 class FirstTableViewController: UITableViewController {
     
     var areas = [
-        area(areas: "咖啡胡同", tupian: "cafedeadend.jpg", didian: "香港", leixing: "咖啡 & 茶店", isVisited: false),
+        area(areas: "咖啡胡同11111111111111111111111", tupian: "cafedeadend.jpg", didian: "香港", leixing: "咖啡 & 茶店", isVisited: false),
         area(areas: "霍米", tupian: "homei.jpg", didian: "香港", leixing: "咖啡", isVisited: false),
         area(areas: "茶.家", tupian: "teakha.jpg", didian: "香港", leixing: "茶屋", isVisited: false),
         area(areas: "洛伊斯咖啡", tupian: "cafeloisl.jpg", didian: "香港", leixing: "奥地利式 & 休闲饮料", isVisited: false),
@@ -39,6 +39,7 @@ class FirstTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

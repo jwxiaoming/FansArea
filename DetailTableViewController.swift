@@ -23,6 +23,9 @@ class DetailTableViewController: UITableViewController {
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.estimatedRowHeight = 36
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         self.title = areas.areas
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -107,14 +110,22 @@ class DetailTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showReview"{
+            let dest = segue.destination as! ReviewViewController
+            dest.beijing = areas
+        }
+        
     }
-    */
+    
+    
+    //添加反向转场方法
+    @IBAction func close(segue: UIStoryboardSegue)  {
+    
+    }
 
 }
