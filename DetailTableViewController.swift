@@ -11,6 +11,7 @@ import UIKit
 class DetailTableViewController: UITableViewController {
 
 
+    @IBOutlet weak var ratingbtn: UIButton!
     @IBOutlet weak var LargeimageView: UIImageView!
     
     var areas: area!
@@ -125,6 +126,12 @@ class DetailTableViewController: UITableViewController {
     
     //添加反向转场方法
     @IBAction func close(segue: UIStoryboardSegue)  {
+        let reviewVC = segue.source as! ReviewViewController
+        
+        if let rating = reviewVC.rating{
+            self.areas.rating = rating
+            self.ratingbtn.setImage(UIImage(named:rating), for: .normal)
+        }
     
     }
 

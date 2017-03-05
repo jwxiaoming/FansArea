@@ -147,13 +147,13 @@
                                             <rect key="frame" x="8" y="8" width="304" height="19"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="字段" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e1-QY-byM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="19"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="101.5" height="19"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="值" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTM-KP-IiU">
-                                                    <rect key="frame" x="102" y="0.0" width="202" height="19"/>
+                                                    <rect key="frame" x="101.5" y="0.0" width="202.5" height="19"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -185,6 +185,7 @@
                     </tableView>
                     <connections>
                         <outlet property="LargeimageView" destination="kxi-uO-PBi" id="gMj-pW-zso"/>
+                        <outlet property="ratingbtn" destination="2F1-HA-qnz" id="d5L-HK-z61"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BcR-bz-B1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,15 +208,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我来过，评价一下吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPe-GX-Zvr">
-                                <rect key="frame" x="32.5" y="70" width="255.5" height="33.5"/>
+                                <rect key="frame" x="32.5" y="120" width="255.5" height="33.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9s8-0U-0PM">
-                                <rect key="frame" x="45" y="120" width="230" height="70"/>
+                                <rect key="frame" x="45" y="170" width="230" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpB-11-3xC">
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpB-11-3xC">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -229,8 +230,11 @@
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ratingtap:" destination="3Xv-2i-eJO" eventType="touchUpInside" id="W9W-aF-9dq"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHq-I2-Rj2">
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHq-I2-Rj2">
                                         <rect key="frame" x="80" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -244,8 +248,11 @@
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ratingtap:" destination="3Xv-2i-eJO" eventType="touchUpInside" id="hQq-3a-0JU"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tch-IG-gDW">
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tch-IG-gDW">
                                         <rect key="frame" x="160" y="0.0" width="70" height="70"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -259,6 +266,9 @@
                                                 <integer key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ratingtap:" destination="3Xv-2i-eJO" eventType="touchUpInside" id="aiN-MV-1NQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -273,16 +283,16 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="close"/>
                                 <connections>
-                                    <segue destination="LAD-D2-tBw" kind="unwind" unwindAction="closeWithSegue:" id="7oQ-1v-Odg"/>
+                                    <segue destination="LAD-D2-tBw" kind="unwind" identifier="unwindtoDetailTableVIew" unwindAction="closeWithSegue:" id="7oQ-1v-Odg"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oPe-GX-Zvr" firstAttribute="top" secondItem="enL-gJ-Ymm" secondAttribute="bottom" constant="50" id="0pH-zt-z3S"/>
+                            <constraint firstItem="oPe-GX-Zvr" firstAttribute="top" secondItem="enL-gJ-Ymm" secondAttribute="bottom" constant="100" id="0pH-zt-z3S"/>
                             <constraint firstItem="oR8-dO-onM" firstAttribute="width" secondItem="aBf-LJ-7YS" secondAttribute="width" id="812-lp-Z9u"/>
                             <constraint firstItem="oR8-dO-onM" firstAttribute="height" secondItem="aBf-LJ-7YS" secondAttribute="height" id="His-7F-wGQ"/>
-                            <constraint firstItem="9s8-0U-0PM" firstAttribute="top" secondItem="enL-gJ-Ymm" secondAttribute="bottom" constant="100" id="YuE-v0-mAD"/>
+                            <constraint firstItem="9s8-0U-0PM" firstAttribute="top" secondItem="enL-gJ-Ymm" secondAttribute="bottom" constant="150" id="YuE-v0-mAD"/>
                             <constraint firstItem="9s8-0U-0PM" firstAttribute="centerX" secondItem="aBf-LJ-7YS" secondAttribute="centerX" id="bTU-m9-9lF"/>
                             <constraint firstAttribute="trailing" secondItem="JG5-bu-5NR" secondAttribute="trailing" constant="10" id="dnF-yJ-tko"/>
                             <constraint firstItem="JG5-bu-5NR" firstAttribute="top" secondItem="aBf-LJ-7YS" secondAttribute="top" constant="30" id="eCB-6B-EtR"/>
@@ -293,6 +303,8 @@
                     </view>
                     <connections>
                         <outlet property="bgimageview" destination="oR8-dO-onM" id="JK6-HZ-mcV"/>
+                        <outlet property="ratingStackview" destination="9s8-0U-0PM" id="XTy-h0-b2B"/>
+                        <outlet property="tiitle" destination="oPe-GX-Zvr" id="7KO-xi-YJY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujz-Ls-uZW" userLabel="First Responder" sceneMemberID="firstResponder"/>

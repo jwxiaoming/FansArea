@@ -14,6 +14,18 @@ struct area {
     var didian:String
     var leixing:String
     var isVisited:Bool
+    var rating = ""
+    
+    
+    //不影响原来初始化函数
+    init(areas: String, tupian: String, didian: String, leixing: String, isVisited: Bool) {
+        self.areas = areas
+        self.tupian = tupian
+        self.didian = didian
+        self.leixing = leixing
+        self.isVisited = isVisited
+    }
 }
+
 
 		
